@@ -1,0 +1,29 @@
+<div class="home-bg">
+  <div class="navbar">
+    <app-navbar></app-navbar>
+  </div>
+  
+  <div>
+    <app-search (searchEvent)="performSearch($event)"></app-search>
+  </div>
+  <br>
+  
+  <div class="evento-grid">
+   
+    <div class="evento-card" *ngFor="let evento of eventosFiltrados.length ? eventosFiltrados : eventos">
+      <div class="evento-detalhe">
+        <div class="eventos-name">Nome: {{ evento.nome }}</div>
+        <div class="eventos-name">Descrição: {{ evento.descricao }}</div>
+        <div class="eventos-name">Hora: {{ evento.hora }}</div>
+        <div class="eventos-name">Local: {{ evento.local }}</div>
+        <div class="eventos-name">Data: {{ evento.data }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button class="cadastrar-btn">
+      <a href="http://localhost:4200/evento">Cadastrar evento</a>
+    </button>
+  </div>
+</div>
